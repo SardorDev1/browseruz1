@@ -21,6 +21,61 @@ user.addEventListener('click', () => {
  
 })
 
+const timeElement = document.querySelector(".time");
+const dateElement = document.querySelector(".date");
+
+/**
+ * @param {Date} date
+ */
+function formatTime(date) {
+  const hours12 = date.getHours() % 12 || 12;
+  const minutes = date.getMinutes();
+  const isAm = date.getHours() < 12;
+
+  return `${hours12.toString().padStart(2, "0")}:${minutes
+    .toString()
+    .padStart(2, "0")} ${isAm ? "AM" : "PM"}`;
+}
+
+/**
+ * @param {Date} date
+ */
+function formatDate(date) {
+  const DAYS = [
+    "Yakshanba",
+    "Dushanba",
+    "Seshanba",
+    "Chorshanba",
+    "Payshanba",
+    "Juma",
+    "Shanba"
+  ];
+  const MONTHS = [
+    "Yanvar",
+    "Fevral",
+    "Mart",
+    "April",
+    "May",
+    "Iyun",
+    "Iyul",
+    "Avgust",
+    "Sentabr",
+    "Oktabr",
+    "Noyabr",
+    "Dekabr"
+  ];
+
+  return `${DAYS[date.getDay()]}, ${
+    MONTHS[date.getMonth()]
+  } ${date.getDate()} ${date.getFullYear()}`;
+}
+
+setInterval(() => {
+  const now = new Date();
+
+  timeElement.textContent = formatTime(now);
+  dateElement.textContent = formatDate(now);
+}, 200);
 
 
 
@@ -71,20 +126,22 @@ const apiKey = "4d8fb5b93d4af21d66a2948710284366";
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+      li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup =`
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup;
@@ -116,20 +173,22 @@ const sity2 = 'sirdaryo'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+      li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup2 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup2;
@@ -155,20 +214,22 @@ const city3 = 'samarqand'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+      li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup3 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup3;
@@ -195,20 +256,22 @@ const city4 = 'namangan'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup4 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup4;
@@ -235,20 +298,22 @@ const city4 = 'namangan'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup5 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup5;
@@ -276,20 +341,22 @@ const city6 = 'navoiy'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup6 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup6;
@@ -315,20 +382,22 @@ const city7 = 'urganch'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup7 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup7;
@@ -354,20 +423,22 @@ const city8 = 'termiz'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup8 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup8;
@@ -394,20 +465,22 @@ const city8 = 'termiz'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup9 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup9;
@@ -433,20 +506,22 @@ const city8 = 'termiz'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup10 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup10;
@@ -472,20 +547,22 @@ const city8 = 'termiz'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup11 =`
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup11;
@@ -511,20 +588,22 @@ const city12 = 'andijon'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12");
       const markup12 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+      <div class="city" >
+      <h2 class="city-name" data-name="${name}">
+      <span>${name}</span>
+     
+    </h2>
+    <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+    <figure>
+      <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+    weather[0]["description"]
+  }">
+    
+    </figure>
+      </div>
     `;
      
       li.innerHTML = markup12;
@@ -552,20 +631,22 @@ const city12 = 'andijon'
         weather[0]["icon"]
       }.svg`;
 
-      const li = document.createElement("li");
-      li.classList.add("city");
+      const li = document.createElement("div");
+       li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup13 = `
-      <h2 class="city-name" data-name="${name},${sys.country}">
-        <span>${name}</span>
-        <sup>${sys.country}</sup>
-      </h2>
-      <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
-      <figure>
-        <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
-      weather[0]["description"]
-    }">
-      
-      </figure>
+     <div class="city " >
+     <h2 class="city-name" data-name="${name}">
+     <span>${name}</span>
+    
+   </h2>
+   <div class="city-temp">${Math.round(main.temp)}<sup>°C</sup></div>
+   <figure>
+     <img style="margin:auto;" class="city-icon" src="${icon}" alt="${
+   weather[0]["description"]
+ }">
+   
+   </figure>
+     </div>
     `;
      
       li.innerHTML = markup13;
