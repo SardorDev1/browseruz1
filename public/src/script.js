@@ -127,7 +127,7 @@ const apiKey = "4d8fb5b93d4af21d66a2948710284366";
       }.svg`;
 
       const li = document.createElement("div");
-      li.classList.add("col-lg-3","col-md-6","col-sm-12");
+           li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup =`
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -174,7 +174,7 @@ const sity2 = 'sirdaryo'
       }.svg`;
 
       const li = document.createElement("div");
-      li.classList.add("col-lg-3","col-md-6","col-sm-12");
+           li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup2 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -215,7 +215,7 @@ const city3 = 'samarqand'
       }.svg`;
 
       const li = document.createElement("div");
-      li.classList.add("col-lg-3","col-md-6","col-sm-12");
+           li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup3 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -257,7 +257,7 @@ const city4 = 'namangan'
       }.svg`;
 
       const li = document.createElement("div");
-       li.classList.add("col-lg-3","col-md-6","col-sm-12");
+            li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup4 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -299,7 +299,7 @@ const city4 = 'namangan'
       }.svg`;
 
       const li = document.createElement("div");
-       li.classList.add("col-lg-3","col-md-6","col-sm-12");
+            li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup5 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -342,7 +342,7 @@ const city6 = 'navoiy'
       }.svg`;
 
       const li = document.createElement("div");
-       li.classList.add("col-lg-3","col-md-6","col-sm-12");
+            li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup6 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -383,7 +383,7 @@ const city7 = 'urganch'
       }.svg`;
 
       const li = document.createElement("div");
-       li.classList.add("col-lg-3","col-md-6","col-sm-12");
+            li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup7 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -424,7 +424,7 @@ const city8 = 'termiz'
       }.svg`;
 
       const li = document.createElement("div");
-       li.classList.add("col-lg-3","col-md-6","col-sm-12");
+      li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup8 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -466,7 +466,7 @@ const city8 = 'termiz'
       }.svg`;
 
       const li = document.createElement("div");
-       li.classList.add("col-lg-3","col-md-6","col-sm-12");
+      li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup9 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -507,7 +507,7 @@ const city8 = 'termiz'
       }.svg`;
 
       const li = document.createElement("div");
-       li.classList.add("col-lg-3","col-md-6","col-sm-12");
+      li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup10 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -548,7 +548,7 @@ const city8 = 'termiz'
       }.svg`;
 
       const li = document.createElement("div");
-       li.classList.add("col-lg-3","col-md-6","col-sm-12");
+      li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup11 =`
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
@@ -589,7 +589,7 @@ const city12 = 'andijon'
       }.svg`;
 
       const li = document.createElement("div");
-       li.classList.add("col-lg-3","col-md-6","col-sm-12");
+      li.classList.add("col-lg-3","col-md-6","col-sm-12","m-auto");
       const markup12 = `
       <div class="city" >
       <h2 class="city-name" data-name="${name}">
